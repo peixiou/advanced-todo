@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+}
+
+.container-shadow--disabled {
+  display: none;
+}
+
+.container-shadow--focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+}
+
+.container > .header {
+  font-size: 6.4rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  height: 100%;
+}
+
+.backlog,
+.ongoing,
+.completed {
+  width: 100%;
+  height: 50vh;
+}
+
+.backlog > .header,
+.ongoing > .header,
+.completed > .header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 4.8rem;
+}
+
+.backlog .add-item,
+.ongoing .add-item,
+.completed .add-item {
+  font-size: 25px;
+}
+
+.backlog .add-item:hover,
+.ongoing .add-item:hover,
+.completed .add-item:hover {
+  cursor: pointer;
+}
+
+.list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  padding: 25px 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 15px 15px 19px 0px rgba(180, 178, 178, 0.1);
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+.item > .content {
+  font-size: 20px;
+  flex-grow: 1;
+}
+
+.item > .circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+.item > .circle:hover {
+  cursor: pointer;
+}
+
+.circle--backlog {
+  border: 1px solid blue;
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+.circle--ongoing {
+  background-color: rgba(255, 255, 0, 0.2);
+  border: 1px solid yellow;
+}
+
+.circle--completed {
+  background-color: rgba(0, 128, 0, 0.2);
+  border: 1px solid green;
+}
+
+.item > .delete {
+  font-size: 20px;
+  color: red;
+}
+
+.item > .delete:hover {
+  cursor: pointer;
+}
+
+.item-form--disabled {
+  display: none;
+}
+
+.item-form--active {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  z-index: 999;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #ffffff;
+  font-size: 2rem;
+}
+
+.item-form--active > .header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 3.2rem;
+}
+
+.item-form--active > .header .close {
+  font-size: 25px;
+  color: red;
+}
+
+.item-form--active > .header .close:hover {
+  cursor: pointer;
+}
+
+.item-form--active > .form {
+  position: relative;
+}
+
+.title-container,
+.status-container,
+.description-container {
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 2rem;
+}
+
+.title-container > input,
+.status-container > select,
+.description-container > textarea {
+  width: 100%;
+  border: none;
+  font-size: 20px;
+}
+
+.description-container > textarea {
+  min-height: 200px;
+  resize: none;
+}
+
+.title-container > input:focus,
+.status-container > select:focus,
+.description-container > textarea:focus {
+  outline: none;
+}
+
+.item-form--active > .form .btn {
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  border: 1px solid black;
+  border-radius: 8px;
+  font-size: 2rem;
+}
+
+.item-form--active > .form .btn:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>To Do List</h1>
+      </header>
+      <div class="todo">
+
+        <!-- 尚未執行事項列表 -->
+        <div class="backlog">
+          <div class="header">
+            <h2>Backlog</h2>
+            <div class="add-item">+</div>
+          </div>
+          <!-- 代辦事項容器 -->
+          <div class="list">
+            <div class="item">
+              <div class="circle circle--backlog"></div>
+              <p class="content">尚未執行的代辦（寫死在 HTML 裡，執行前刪除）</p>
+              <div class="delete">x</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 進行中事項列表 -->
+        <div class="ongoing">
+          <div class="header">
+            <h2>Ongoing</h2>
+            <div class="add-item">+</div>
+          </div>
+          <!-- 代辦事項容器 -->
+          <div class="list">
+            <div class="item">
+              <div class="circle circle--ongoing"></div>
+              <p class="content">進行中的代辦（寫死在 HTML 裡，執行前刪除）</p>
+              <div class="delete">x</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 已完成事項列表 -->
+        <div class="completed">
+          <div class="header">
+            <h2>Completed</h2>
+            <div class="add-item">+</div>
+          </div>
+          <!-- 代辦事項容器 -->
+          <div class="list">
+            <div class="item">
+              <div class="circle circle--completed"></div>
+              <p class="content">已完成的代辦（寫死在 HTML 裡，執行前刪除）</p>
+              <div class="delete">x</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 代辦事項彈出時的背景 -->
+      <div id="container-shadow" class="container-shadow--disabled"></div>
+    </div>
+
+    <!-- 代辦事項新增/變更表單 -->
+    <div id="item-form" class="item-form--disabled">
+        <div class="header">
+            <h2>增加/變更 Item</h2>
+            <div class="close">x</div>
+        </div>
+      <form class="form" action="">
+        <div class="item-name-container">
+            <p>名稱</p>
+            <input name="item-name" type="text" />
+        </div>
+        <div class="status-container">
+            <p>狀態</p>
+            <select name="status" id="status">
+                <option value="backlog">backlog
+                <option value="ongoing">ongoing
+                <option value="completed">completed
+            </select>
+          </option>
+        </div>
+        <div class="description-container">
+            <p>備註</p>
+            <textarea name="description" id="description">some description</textarea>
+        </div>
+        <button class="btn">送出</button>
+      </form>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
